@@ -1,6 +1,8 @@
 #include "LightSensorImpl.h"
 #include "Arduino.h"
 
+// Maybe not useful
+
 LightSensorImpl::LightSensorImpl(int pin){
   this->pin = pin;
 }

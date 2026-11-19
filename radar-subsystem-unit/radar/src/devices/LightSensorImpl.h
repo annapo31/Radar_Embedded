@@ -1,5 +1,7 @@
 #include "LightSensor.h"
 
+// Maybe not useful
+
 class LightSensorImpl: public LightSensor {
 
 public: 
