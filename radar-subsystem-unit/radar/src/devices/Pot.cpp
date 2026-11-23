@@ -1,23 +1,23 @@
 #include "Pot.h"
 #include "Arduino.h"
 
-Potentiometer::Potentiometer(int pin){
+Pot::Pot(int pin){
   this->pin = pin;
 } 
   
-void Potentiometer::sync(){
+void Pot::sync(){
   value = analogRead(pin);  
   updateSyncTime(millis());
 }
 
-float Potentiometer::getValue(){
+float Pot::getValue(){
   return value / 1023.0;
 }
 
-void Potentiometer::updateSyncTime(long time){
+void Pot::updateSyncTime(long time){
 	lastTimeSync = time;
 }
 
-long Potentiometer::getLastSyncTime(){
+long Pot::getLastSyncTime(){
 	return lastTimeSync;
 }

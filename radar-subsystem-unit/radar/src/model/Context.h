@@ -6,17 +6,31 @@ class Context {
 public:
   Context();
 
-  void setStarted();
-  void setStopped();
+  void setInIdle();
+  void setButtonStart();
+  void setButtonStop();
+  void setButtonReset();
+  void setDetection();
+  void setDetectionNear();
 
-  bool isStarted();  
-  bool isStopped();
-  void reset();
+  bool isInIdle();  
+  bool isButtonStartPressed();
+  bool isButtonStopPressed();
+  bool isButtonResetPressed();
+  bool isDetectionNear();
+  bool isDetection();
 
 private:
 
-  bool started; 
-  bool stopped;
+  void reset();
+
+  bool idle;
+  bool buttonStart;
+  bool buttonStop;
+  bool buttonReset;
+  bool detectionNear;
+  bool detection;
+
 };
 
 #endif

@@ -1,30 +1,75 @@
 #include "Context.h"
 
-Context::Context(){
-  started = false;
-  stopped = false;
+Context::Context() {
+  idle = false;
+  buttonStart = false;
+  buttonStop = false;
+  buttonReset = false;
+  detectionNear = false;
+  detection = false;
 }
 
-bool Context::isStarted(){
-  return started;
+bool Context::isInIdle() {
+  return idle;
 }
 
-bool Context::isStopped(){
-  return stopped;
+bool Context::isButtonStartPressed() {
+  return buttonStart;
 }
 
-void Context::setStarted(){
-  started = true;
-  stopped = false;
+bool Context::isButtonStopPressed() {
+  return buttonStop;
 }
 
-void Context::setStopped(){
-  stopped = true;
-  started = false;
+bool Context::isButtonResetPressed() {
+  return buttonReset;
 }
 
-void Context::reset(){
-  started = false;
-  stopped = false;
+bool Context::isDetectionNear() {
+  return detectionNear;
+}
+
+bool Context::isDetection() {
+  return detection;
+}
+
+void Context::setInIdle() {
+  this->reset();
+  idle = true;
+}
+
+void Context::setButtonStarted() {
+  this->reset();
+  buttonStart = true;
+}
+
+void Context::setButtonStop() {
+  this->reset();
+  buttonStop = true;
+}
+
+void Context::setButtonReset() {
+  this->reset();
+  buttonReset = true;
+}
+
+void Context::setDetection() {
+  this->reset();
+  detection = true;
+}
+
+void Context::setDetectionNear() {
+  this->reset();
+  detectionNear = true;
+}
+
+
+void Context::reset() {
+  idle = false;
+  buttonStart = false;
+  buttonStop = false;
+  buttonReset = false;
+  detectionNear = false;
+  detection = false;
 }
 

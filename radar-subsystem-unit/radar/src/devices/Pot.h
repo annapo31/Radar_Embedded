@@ -1,10 +1,10 @@
 #ifndef __POT__
 #define __POT__
 
-class Potentiometer {
+class Pot {
  
 public: 
-  Potentiometer(int pin);
+  Pot(int pin);
   
   float getValue();
 

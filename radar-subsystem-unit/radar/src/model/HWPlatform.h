@@ -5,8 +5,11 @@
 #include "devices/Button.h"
 #include "devices/Led.h"
 #include "devices/ServoMotor.h"
-
-// Hardware component used in the project, we can test them (directory test)
+#include "kernel/Logger.h"
+#include "devices/Pot.h"
+#include "LiquidCrystal_I2C.h"
+#include "devices/Pir.h"
+#include "devices/TempSensorTMP36.h"
 
 class HWPlatform {
 
@@ -15,15 +18,28 @@ public:
   void init();
   void test();
 
-  Button* getButton();
-  Led*  getLed();
+  Button* getButtonStart();
+  Button* getButtonReset();
+  Button* getButtonStop();
+  Led*  getLedGreen();
+  Led*  getLedRed();
   ServoMotor* getMotor();
+  Pir* getPir();
+  TempSensorTMP36* getTempSensor();
+  LiquidCrystal_I2C* getLCD();
+  Pot* getPot();
 
 private:
-  Button* pButton;
-  Led* pLed;
+  Button* pButtonStart;
+  Button* pButtonReset;
+  Button* pButtonStop;
+  Led* pLedGreen;
+  Led* pLedRed;
   ServoMotor* pMotor;
-  
+  Pot* pPot;
+  Pir* pPir;
+  TempSensorTMP36* pTemp;
+  LiquidCrystal_I2C* lcd;
 };
 
 #endif
